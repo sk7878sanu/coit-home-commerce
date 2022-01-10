@@ -30,7 +30,7 @@ spec:
       - name: deploy-pull-harbor
       containers:
         - name: server
-          image: checkoutservice
+          image: gcr.io/studied-source-312913/checkoutservice:v1
           ports:
           - containerPort: 5050
           readinessProbe:

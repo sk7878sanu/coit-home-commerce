@@ -30,7 +30,7 @@ spec:
       - name: deploy-pull-harbor
       containers:
       - name: server
-        image: shippingservice
+        image: gcr.io/studied-source-312913/shippingservice:v1
         ports:
         - containerPort: 50051
         env:
