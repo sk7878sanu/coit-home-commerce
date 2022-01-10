@@ -31,7 +31,7 @@ spec:
       - name: deploy-pull-harbor
       containers:
       - name: server
-        image: adservice
+        image: gcr.io/studied-source-312913/adservice:v1
         ports:
         - containerPort: 9555
         env:
