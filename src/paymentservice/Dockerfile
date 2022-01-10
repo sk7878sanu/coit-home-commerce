@@ -17,6 +17,7 @@ FROM node:12-alpine as base
 FROM base as builder
 
 # Some packages (e.g. @google-cloud/profiler) require additional
+RUN echo -e "http://nl.alpinelinux.org/alpine/v3.5/main\nhttp://nl.alpinelinux.org/alpine/v3.5/community" > /etc/apk/repositories
 # deps for post-install scripts
 RUN apk add --update --no-cache \
     python \
