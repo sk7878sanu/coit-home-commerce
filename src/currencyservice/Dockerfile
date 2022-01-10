@@ -18,6 +18,8 @@ FROM base as builder
 
 # Some packages (e.g. @google-cloud/profiler) require additional
 # deps for post-install scripts
+RUN echo -e "http://nl.alpinelinux.org/alpine/v3.5/main\nhttp://nl.alpinelinux.org/alpine/v3.5/community" > /etc/apk/repositories
+
 RUN apk add --update --no-cache \
     python \
     make \
