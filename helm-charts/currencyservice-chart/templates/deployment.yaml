@@ -39,10 +39,10 @@ spec:
               protocol: TCP
 
           readinessProbe:
-          exec:
+           exec:
             command: ["/bin/grpc_health_probe", "-addr=:7000"]
           livenessProbe:
-          exec:
+           exec:
             command: ["/bin/grpc_health_probe", "-addr=:7000"]
 
           resources:
