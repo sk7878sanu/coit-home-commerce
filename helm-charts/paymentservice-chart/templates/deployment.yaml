@@ -37,14 +37,14 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
+
           readinessProbe:
-            httpGet:
-              path: /
-              port: http
+           exec:
+            command: ["/bin/grpc_health_probe", "-addr=:50051"]
+          livenessProbe:
+           exec:
+            command: ["/bin/grpc_health_probe", "-addr=:50051"]
+
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
